@@ -12,7 +12,6 @@
   </head>
 
   <body>
-  <img src="https://cloud.githubusercontent.com/assets/9040161/7992260/01c7871a-0ab3-11e5-9202-7560a2380b49.png" alt="graphs.png"/>
     <!-- HEADER -->
     <div id="header_wrap" class="outer">
         <header class="inner">
@@ -30,34 +29,53 @@
         <h3>
 <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>A Country's Flag And Its Religion.</h3>
 
-<p>Hello:</p>
+<h3>
+<a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span class="octicon octicon-link"></span></a>Introduction:</h3>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+<p>
+The first flags were used to assist military coordination on battlefields , and have since evolved into a general tool for rudimentary signalling and identification, especially in environments where communication is similarly challenging. National flags contain elements that can describe a country’s culture, such as symbols that trace back to their history, a certain number of stars that represent the number of states or provinces, colors that mean something important to them, national mottos written in their language, and so on.
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+For example, Brazil’s flag is mainly green, which represents Brazil’s lush fields and forests. The yellow diamond in the center symbolizes Brazil’s wealth in gold. Each of the 27 white stars inside the blue globe represents a state in Brazil, arranged in the same pattern as the night sky over Brazil. Finally, from the motto on the flag “Ordem E Progresso” (Order And Progress) one can tell that their official language is Portuguese.</p>
+
+<img src="https://cloud.githubusercontent.com/assets/9040161/8001386/1aab5c90-0b1a-11e5-9ca5-7f80fbbced06.png" alt="graphs.png"/>
+
+<p>Furthermore, knowing that flags can give you a sneak peak about the country, let’s explore how the patterns of a flag can help you predict a nation’s official religion. In this post, the analysis is based on 194 countries - not a lot but enough , with religion as the main factor, divided into six categories: Buddhist, Christian, Hindu, Muslim, and Others.</p>
 
 <h3>
-<a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+<a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span class="octicon octicon-link"></span></a>Colors:</h3>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+<p>As mentioned before, there are reasons why a country would use certain colors on their flag, and every color is interpreted differently depending on a nation’s main beliefs. Now the question is: would there be a pattern? The first step in our journey is to analyze the probability of using a certain color as the main hue and see if there is a pattern.</p>
+
+<img src="https://cloud.githubusercontent.com/assets/9040161/7992259/01c6dc7a-0ab3-11e5-9897-0b91b6edbab9.png" alt="graphs.png"/>
+
+<p>For this analysis, we are not going to explore “Others”, since this category includes:  religions that do not show more than once in the whole data set such as Shinto, countries that have no religion, or a wide variety of religions practiced in those countries.</p>
+
+<p>At first glance, it seems like red is the most used among these countries, and black and orange are the least used. Looking more carefully, we can see that orange would be most used in Hindu countries, blue by Christians, and green by Muslims and Hindus. As of now, it is hard to tell the religion of a country whose flag’s main hue is also commonly used by others, such as red. How can we tell what the official religion of a country is if its main hue on the flag is red? For this, we need to take a look at the combination of colors of each flag for each religion, and as before, see if there is a pattern. 
+</p>
+
+<img src="https://cloud.githubusercontent.com/assets/9040161/7992260/01c7871a-0ab3-11e5-9202-7560a2380b49.png alt="graphs.png"/>
+
+<p>In this graph, we are displaying the probability of all colors in all flags grouped by religion. It’s a good thing that some obvious combinations appeared; if a flag’s main hue is red along with green and white, there is a high chance the flag belongs to an Islamic country. </p>
+
+<p>From the first graph, there are three main hues with the same probabilities: red, green, and orange. In this graph, we notice that Hindu countries include more blue, yellow and white than other colors. Based on these observations, we can probably say  that when we see a flag that is mainly red, green, or orange and accompanied with blue, yellow or white, it is a Hindu flag. A lot of these color combinations are similar to the ones in other religions, therefore, we cannot only base our prediction in colors. </p>
+
+<p>The same goes for Buddhism-based countries, as they use a lot of red in their flags, but their two most other used colors are white and blue, which is the same case as Christian-based nations. In this case, we will need to go to the next step: elements on the flags.</p>
 
 <h3>
-<a id="rather-drive-stick" class="anchor" href="#rather-drive-stick" aria-hidden="true"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+<a id="rather-drive-stick" class="anchor" href="#rather-drive-stick" aria-hidden="true"><span class="octicon octicon-link"></span></a>Symbols</h3>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+<img src="https://cloud.githubusercontent.com/assets/9040161/7992258/01c49c94-0ab3-11e5-99ba-3d7352f3fb35.png alt="graphs.png"/>
+
+<p>When it comes to predicting a religion through symbols on the flag, the pattern becomes more straightforward. The probability that a flag contains a cross or a saltire and is Christian is less than 0.25, which sounds like it is a low chance. However, no other religion had a cross on their flag, except for only one Buddhist country.</p>
+
+<p>Similarly, if there is a star or crescent present, it is most likely Muslim or Buddhist, but if the flag has both, then it is most definitely Muslim.</p>
 
 <h3>
-<a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+<a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span class="octicon octicon-link"></span></a>Conclusion:</h3>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+<p>Long story short, we can more less tell the religion of a country by the colors of its flag, but we need to incorporate other features to make a more accurate prediction. 
+For example, in the beginning, we had the issue of how we could tell apart the color patterns between a Buddhist country and a Christian country , but with no doubt we can say that a country whose flag has a cross or a saltire is Christian. Therefore, if we see a flag with any combination of red, blue and white, we can think of whether it has a cross/saltire or not. Now we can better predict ifa country is Buddhist or Christian. The case is similar for the combination of colors between a Hindu flag and the rest , apparently if there are not many symbols on the flag, then it is probably Hindu.</p>
 
-<h3>
-<a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="https://help.github.com/pages">https://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
       </section>
     </div>
 
